@@ -1,0 +1,126 @@
++ como crear un proyecto en node js == npm init
++ desde aqui ya puedo instalar librerias
++ npm = install package node aqui estan todos los paquetes para instalar
++ npm install name_libreria
++ node_module aqui se van a instalar todas las dependencias de nuestros proyectos
++ para instalar de manera global npm install -g bootstrap
++ nodemon = permite escuchar los cambios de un archivo
++ npm install -g create-react-app name_project= antes teniamos que instalar el comando para ponerlo globalmente pero con npx ya no es necesario si no solo asi
++ npx =comando de node que permite ejecutar un comando de react sin tener q instalarlo globalmente
++ crear_project en react = npx create-react-app react
+
+
+
++ npm i -g yarn = es una libreria en node que instala librerias de npm mucho mas rapido que npm
++ una vez instalado yarn react instalara no con npx si no yarn automaticamente
+
+
++ asi ingreso y asi le doy para levantar react
+  1.  cd basics
+  2. yarn start
+
+
++ node_modules = no se suge a github recuerda siempre
+
++ cuando subes tu proyecto a github no va el node_modules por lo cual cuando lo descargues vas a hacer siempre npm install y este comando instalara todo los paquetes que se encuentren en package.json
+
++ en un archivo solo puede existe un export default
+
++ la funcion del App seria el componente la logica y lo que retorna seria la vista del componente return
+
++ {} nos permite mostrar variables y hacer operacion de javascript en una sola linea
+  + solo en el return va solo un div o <> o frament
+
+  + aqui en react para aplicar un evento no necesitamos capturar al elemento  si no dentro del elemento colocarle el evento que quieres que actue pero va ir asi onClick con calmelcase y recuerda para ejecutar codigo js tienes k poner { } de alli recien colocarle la funcion que va responder al evento
+        //^ <button onClick={()=>{}}>+1</button>
+
+  + si hay esto()=> { } lo puedo reemplazar por una funcion pero solo referenciandolo asi name_function no vas a poder con el llamado name_function() nunca hacer esooo
+    
+  + 1ra forma de responder a un  evento { () => { } } o no { name_function } por refrencia
+ojo no siempre vas a poder usar la 1ra hay veces que vamos a usar la forma 2
+  
+
+********** VARIABLE DE ESTADO *****************
+  una VE es una varriable que esta siendo observador por el DOM en todo momento, de hecho si la variable se modifica, el DOM reacciona y redibuja todos los elementos que dependen de la variable de estado
+
+  + asi se crea una variable de estado contador recibe un valor incial y su funcion modificador es setContador(aqui recibe el siguiente valor de contador)
+  + el useState(valor inicial) puede ser de cualquier tipo Boolean, Array, Object, Int, Float, lo que sea
+  + estamos destructurando atravez de un array devuelve un array de 2 elementos
+  + contador = variable de estado
+  + setContador = modificador de la variable de estado
+  //^ const [contador, setContador] = useState(0)
+    
+  + cuando se usa una variable de estado cuando la VE dependa del DOM
+  + cuando quereamos redibujar un elemento alli vamos a usar una VE
+
+// https://www.youtube.com/watch?v=hlWiI4xVXKY
+  
+  ********** COMUNICACION ENTRE COMPONENTES PADRE E HIJOS PASANDO PROPS A LOS HIJOS **************
+
+    
+  + los estilos son globales
+  + el key se coloca dentro de la etiqueta
+
+
+en produccion todo se compila en una carpeta dist todo el public va a pasar a la carpeta dist
+
+react es SPA react todo va a pasar en un solo index nada mas
+EL CODIGO PERFECTO NO existe
+PUEDES CONFUNDIRTE MUCHO Y DE ESO SE APRENDE
+  - toda la funcion de un componente se dibuja cadavez que la variable de estado se actualiza
+
+  - cuando una variable de estado cambia se eecuta nuevamente la funcion o el componente por OfflineAudioCompletionEvent, excepto que no se reinician los valores iniciales de las variables de estado
+
+  - es decir no solo se redibuja el dom si no toda la funcion del componente se vuelve a ejecutar
+
+  //^ useEffect buena!!!!
+-- va a prevenir de ejecutar ciertas funciones en el componente cuando una o mas variables de estado cambien
+  useEffect(() => {
+    return () => {
+      effect
+    };
+  }, [input])
+
+
+  proyectos para aprender
+  Una app donde puedas ver las canciones favoritas de una persona usando la api de spotify, un pokedex usando la api de pokemo, un sitio para ver la información de las peliculas de starwars usando la api de starwars. o el mas común... un administrador de tareas usando el localstorage/sessionStorage
+  + 
+Santiago Alvarez Rozo yo creo que te sirven ps hacer ese tipo de cosas es para lo que te contratan, entre más cosas le puedas agregar mucho mejor, así vas puliendo tu conocimiento en escalabilidad, patrones, etc
+
+haga un todo list colaborativo, o haga un sistema de tickets de soporte tecnico escalable por niveles
+Enrique Cuevas
+
+
+Yo he trabajado más de lado del backend, así que para el tema de diseño estoy medio güero, lo que hice fue ver el curso de react de Fernando y a la par uno de la Torre de bootstrap donde trae como 15 proyectos web, pero yo los proyectos los hacía en react js, me he topado con muchas broncas me creo que he aprendido bastante asi
+
+
+mandar todos los artributos del objeto plato {...plato}
+hacer una copia del objeto plato ...plato
+
+son cosas muy distintas ojo!!!
+
+implementar LA libreria
+-  react-hook-form== para validar formularios
+- react-router-dom == libreria para enrutamiento
+SIN SACRIFICIO NO HAY GANANCIA
+en react hemos visto 
+useState , useEffect , formularios , card, consumo de apis
+++++++   ENRUTAMIENTOS   +++++++++++++
+
++ Router va encapsular a todos los demas es el primero que debemos 
+utilizar 
+
++ lo que va dentro del Switch es la parte dinamica y lo de arriba es la parte estatica
++ en la parte del nav solo se van a mostrar las rutas estatias
++ lo que va dentro del switch es la parte donde se va a navegar en diferentes componentes no olvidarse
+
+que pasa con el enrutador cuando no le pongo el exact a la ruta entonces dira la ruta www.youtube.com/ tiene alguna coincidencia con el path de esta ruta todas las rutas tienen el inicio como / por eso mucha solo el home 
+1ra solucion que podemos hacer es ordenar las rutas generales abajo y las otras arriba 
+2da solucion seria colocarle el exact en todas las rutas y eso va que ocurrir que las cuando el enrutador empieza a buscar la ruta dira la rutas que esta depues del dominio tiene que ser igualito al path de la ruta 
+vamos a ver cuando podemos usar y cuando no podemos usar las rutas
+
+saben por que usamos el Link y no el a href xk al usarlo el href cambia de pagina y hace actualizar el dom por lo cual react es de SPA que es de una sola pagina
+cuando entramos a los link la pagina solo cambia su contenido no llama al servidor a traer nuevamente recursos
+
+
+---- ahor avamos a crear un subenrutamiento amiguitos ---

@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+:root {
+  --naranja: rgb(233, 94, 30);
+--rosado:rgb(255,100,255)
+}
+body {
+  background-color: #eee;
+  font-family: "Roboto", sans-serif;
+}
+header{
+  height: 60px;
+  background: -webkit-linear-gradient(top right , var(--naranja),var(--rosado));
+}
+.card {
+  height: 400px;
+  width: 300px;
+  box-shadow: #aaa 0px 0px 20px;
+  /* margin: 50px auto 0px auto; */
+  position: relative;
+  /* display: inline; */
+}
+.card__section{
+  /* display: inline; */
+}
+
+.card__imagen{
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+}
+.card__opaco{
+  height: 240px;
+  width: 300px;
+  position: absolute;
+  top: 0;
+}
+.card__imagen img {
+  width: 100%;
+  transform: translate(0px, -100px);
+}
+.card__photo {
+  color: white;
+  position: absolute;
+  bottom: 0px;
+  padding: 8px 15px 8px 15px;
+  text-transform: uppercase;
+  font-weight: 800;
+  background-color: var(--naranja);
+  border-radius: 1px;
+}
+
+.card__date {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 20px;
+  right: 20px;
+  color: white;
+  border-radius: 50%;
+  background-color: var(--naranja);
+  text-align: center;
+  padding: 9px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.card__info {
+  height: 40%;
+  background-color: white;
+  padding: 20px;
+  width: 100%;
+}
+.card__subtitle {
+  padding-top: 10px;
+  color: var(--naranja);
+}
+.card__footer {
+  position: relative;
+}
+.card__feed {
+  color: #888;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+.card__feed2 {
+  color: #888;
+  position: absolute;
+  bottom: 10px;
+  left: 140px;
+}
+.card__parrafo {
+  text-align: justify;
+  display: none;
+  line-height: 25px;
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+/* todos los elemento dentro del card van a tener una transition de esa */
+.card *{
+  transition: all 1s ease-out;
+}
+.card:hover .card__imagen{
+  height: 40%;
+}
+.card:hover .card__info {
+  height: 60%;
+}
+.card:hover .card__parrafo {
+  display: block;
+}
+.card:hover .card__opaco{
+  height: 40%;
+  background-color:rgba(0, 0, 0, 0.5);
+}
+
